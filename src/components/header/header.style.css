@@ -1,0 +1,132 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    height: 4rem;
+    padding: 1.25rem;
+    justify-content: space-between;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    background-color: #b00020;
+}
+
+.navbar-sticky {
+    background: #b09600;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: 0.8s all ease;
+}
+
+
+
+.navbar--logo a {
+    cursor: pointer;
+    color: #ffffff;
+    text-decoration: none;
+    animation: rotate 0.7s ease-in-out 0.5s;
+}
+
+.navbar--link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    overflow: hidden;
+}
+
+.navbar--link-item {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    margin-left: 4px;
+    transition: all 0.8s ease;
+}
+
+.navbar--link-item:hover,
+.navbar--link-item.active:hover {
+    color: #FAC213;
+
+}
+
+.navbar--link-item.active {
+    color: #EDEDED;
+
+
+}
+
+.navbar-icon {
+    display: none;
+}
+
+
+@keyframes rotate {
+    0% {
+        transform: rotateY(360deg);
+    }
+
+    100% {
+        transform: rotateY(0rem);
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .navbar-icon {
+        display: block;
+        font-size: 1.6rem;
+        color: #ffffff;
+    }
+
+    .navbar--link.show {
+        display: flex;
+    }
+
+    .navbar {
+        overflow: visible;
+    }
+
+
+    .navbar ul {
+        padding: 1rem;
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        right: 0;
+        top: 65px;
+        background-color: #ffffff;
+        width: 100%;
+        text-align: center;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .navbar--link-item {
+        border-radius: 0;
+        padding: 0.8rem 1rem;
+        color: #b00020;
+        width: 100px;
+
+
+    }
+
+    .navbar--link-item.active {
+        border-bottom: none;
+        border-radius: 0;
+        color: #b00020;
+        border-left: 1px solid;
+        border-right: 1px solid;
+        transition: all 0.8s ease;
+
+
+    }
+
+    .navbar--link.hide {
+        right: -100%;
+        top: -50px;
+        transition: all 0.8s ease-in-out;
+    }
+}
